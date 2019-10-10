@@ -1,6 +1,6 @@
-setup:
-  config:
-    SPRING_PROFILES_ACTIVE: prod
 build:
   docker:
     web: Dockerfile
+run:
+  config:
+    SPRING_PROFILES_ACTIVE: prod
