@@ -11,6 +11,8 @@ jobs:
     working_directory: ~/repo
     environment:
       MAVEN_OPTS: -Xmx500m
+      PORT: "8080"
+      SPRING_PROFILES_ACTIVE: "prod"
     steps:
       - checkout
       - restore_cache:
