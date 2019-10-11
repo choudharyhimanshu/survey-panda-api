@@ -19,5 +19,5 @@ services:
     image: postgres:latest
     environment:
       POSTGRES_PASSWORD: foobar
-    expose:
-      - 5432
+    ports:
+      - "5432:5432"
