@@ -4,7 +4,7 @@ COPY . /app
 
 WORKDIR /app
 
-RUN mvn clean install
+RUN mvn -q clean install
 
 FROM openjdk:8
 
