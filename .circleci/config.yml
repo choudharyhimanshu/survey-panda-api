@@ -4,7 +4,7 @@ jobs:
     machine: true
     steps:
       - checkout
-      - run: >-
+      - run: >
         docker build --build-arg "PACKAGE_NAME=survey-panda-api" --build-arg "PACKAGE_VERSION=0.1.0"
         --build-arg "SPRING_PROFILE=prod" -t "$CIRCLE_PROJECT_REPONAME_$CIRCLE_BRANCH:$CIRCLE_BUILD_NUM" .
   test:
