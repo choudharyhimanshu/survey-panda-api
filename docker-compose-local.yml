@@ -5,10 +5,19 @@ services:
     build:
       context: .
       dockerfile: "Dockerfile"
+    links:
+      - postgres
     environment:
       PORT: "8080"
       SPRING_PROFILES_ACTIVE: "prod"
+      DATABASE_URL: "postgres://postgres:foobar@postgres:5432/postgres"
     ports:
       - "8080:8080"
     volumes:
       - "./maven-repo:/root/.m2"
+  postgres:
+    image: postgres:latest
+    environment:
+      POSTGRES_PASSWORD: foobar
+    ports:
+      - "5432:5432"
