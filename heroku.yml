@@ -4,3 +4,7 @@ setup:
 build:
   docker:
     web: Dockerfile
+  config:
+    PACKAGE_NAME: survey-panda-api
+    PACKAGE_VERSION: 0.1.0
+    SPRING_PROFILE: prod
