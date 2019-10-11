@@ -5,11 +5,14 @@ services:
     build:
       context: .
       dockerfile: "Dockerfile"
+      args:
+        - "PACKAGE_NAME=survey-panda-api"
+        - "PACKAGE_VERSION=0.1.0"
+        - "SPRING_PROFILE=prod"
     links:
       - postgres
     environment:
       PORT: "8080"
-      SPRING_PROFILES_ACTIVE: "prod"
       DATABASE_URL: "postgres://postgres:foobar@postgres:5432/postgres"
     ports:
       - "8080:8080"

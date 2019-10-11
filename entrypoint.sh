@@ -13,11 +13,11 @@ dbhost=`echo $hostport | grep : | cut -d: -f1`
 dbport=`echo $hostport | grep : | cut -d: -f2`
 dbname="`echo $url | grep / | cut -d/ -f2-`"
 
-sed -i "s#&&port&&#$PORT#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
-sed -i "s#&&dbhost&&#$dbhost#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
-sed -i "s#&&dbport&&#$dbport#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
-sed -i "s#&&dbname&&#$dbname#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
-sed -i "s#&&dbusername&&#$dbusername#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
-sed -i "s#&&dbpassword&&#$dbpassword#g" /app/application-${SPRING_PROFILES_ACTIVE}.yml
+sed -i "s#&&port&&#$PORT#g" /usr/src/application.yml
+sed -i "s#&&dbhost&&#$dbhost#g" /usr/src/application.yml
+sed -i "s#&&dbport&&#$dbport#g" /usr/src/application.yml
+sed -i "s#&&dbname&&#$dbname#g" /usr/src/application.yml
+sed -i "s#&&dbusername&&#$dbusername#g" /usr/src/application.yml
+sed -i "s#&&dbpassword&&#$dbpassword#g" /usr/src/application.yml
 
-exec mvn spring-boot:run -f /app/pom.xml
+exec java -Dspring.config.location=/usr/src/application.yml -jar /usr/src/service.jar
