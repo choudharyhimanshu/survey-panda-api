@@ -1,6 +1,6 @@
 # survey-panda-api
 
-A RESTful service as a backend to serve data to https://survey-panda-ui.herokuapp.com/
+A RESTful service to serve as a backend to https://survey-panda-ui.herokuapp.com/ (https://github.com/choudharyhimanshu/survey-panda-ui)
 
 ### Swagger URL
 
@@ -12,6 +12,18 @@ https://survey-panda-api.herokuapp.com/swagger-ui.html
 - Framework: **Spring-boot**
 - Database: **Postgresql**
 - Deployment: **Docker**
+
+### CI/CD
+
+- [CI] All the commits are being tested for docker image build & code level unit tests
+
+    Config file path: `.circleci/config.yml`
+
+Circle CI : https://circleci.com/gh/choudharyhimanshu/survey-panda-api
+
+- [CD] All the commits to `master` branch are being automatically deployed to heroku
+
+    Config file path: `heroku.yml`
 
 ### Setup guide
 
