@@ -19,7 +19,7 @@ https://survey-panda-api.herokuapp.com/swagger-ui.html
 
     Config file path: `.circleci/config.yml`
 
-Circle CI : https://circleci.com/gh/choudharyhimanshu/survey-panda-api
+    Circle CI : https://circleci.com/gh/choudharyhimanshu/survey-panda-api
 
 - [CD] All the commits to `master` branch are being automatically deployed to heroku
 
